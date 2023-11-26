@@ -1,0 +1,15 @@
+<div class="stock-form-container">
+  <div class="form-group">
+    <label for="stockName">Όνομα Μετοχής:</label>
+    <input
+      pInputText
+      type="text"
+      class="form-control"
+      id="stockName"
+      [(ngModel)]="stockName"
+      name="stockName"
+      required
+    />
+  </div>
+  <p-button label="Submit" (onClick)="onSubmit()" icon="pi pi-check"></p-button>
+</div>

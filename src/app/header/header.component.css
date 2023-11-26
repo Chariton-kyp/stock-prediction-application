@@ -1,0 +1,24 @@
+.app-header {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  height: 200px;
+}
+
+.logo-section {
+  /* Στυλ για την ενότητα του logo */
+  margin-right: 20px;
+  width: 50px;
+}
+
+.title-section h1 {
+  margin-left: 100px;
+  font-size: 24px;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+}
