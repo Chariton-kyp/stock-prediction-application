@@ -1,0 +1,321 @@
+<div
+  class="surface-overlay py-3 px-6 shadow-2 flex align-items-center justify-content-between relative lg:static"
+>
+  <a [routerLink]="['/']"
+    ><img
+      src="assets/images/logo-top.png"
+      alt="Stock Prediction Logo"
+      height="70"
+  /></a>
+  <a
+    class="cursor-pointer block lg:hidden text-700"
+    pStyleClass="@next"
+    enterFromClass="hidden"
+    leaveToClass="hidden"
+    [hideOnOutsideClick]="true"
+  >
+    <i class="pi pi-bars text-4xl"></i>
+  </a>
+  <div
+    class="align-items-center flex-grow-1 justify-content-between hidden lg:flex absolute lg:static w-full surface-overlay left-0 top-100 px-6 lg:px-0 z-2 shadow-2 lg:shadow-none"
+  >
+    <section></section>
+    <ul
+      class="list-none p-0 m-0 flex lg:align-items-center text-900 select-none flex-column lg:flex-row cursor-pointer"
+    >
+      <li class="relative">
+        @if (isUserLoggedIn()){
+        <a
+          pRipple
+          class="flex px-6 p-3 h-full lg:px-3 lg:py-2 align-items-center text-600 border-left-2 lg:border-bottom-2 lg:border-left-none border-transparent hover:border-blue-500 font-medium cursor-pointer transition-colors transition-duration-150"
+        >
+          <i class="pi pi-chart-line mr-2"></i>
+          <button
+            pButton
+            pRipple
+            label="Stock Prediction"
+            [routerLink]="['/prediction']"
+            class="p-button-text font-bold"
+          ></button> </a
+        >}
+      </li>
+      <li class="relative">
+        @if (isUserLoggedIn()){
+        <a
+          pRipple
+          class="flex px-6 p-3 h-full lg:px-3 lg:py-2 align-items-center text-600 border-left-2 lg:border-bottom-2 lg:border-left-none border-transparent hover:border-blue-500 font-medium cursor-pointer transition-colors transition-duration-150"
+        >
+          <i class="pi pi-question-circle mr-2"></i>
+          <button
+            pButton
+            pRipple
+            label="Helpdesk Questions"
+            [routerLink]="['/helpdesk']"
+            class="p-button-text font-bold"
+          ></button> </a
+        >}
+      </li>
+    </ul>
+
+    <div
+      class="flex justify-content-between lg:block border-top-1 lg:border-top-none surface-border py-3 lg:py-0 mt-3 lg:mt-0"
+    >
+      @if (isUserLoggedIn()){
+      <button
+        pButton
+        pRipple
+        label="Logout"
+        (click)="logout()"
+        class="p-button-text font-bold"
+      ></button>
+      } @else{
+      <button
+        pButton
+        pRipple
+        label="Login"
+        [routerLink]="['/login']"
+        class="p-button-text font-bold"
+      ></button>
+      <button
+        pButton
+        pRipple
+        label="Register"
+        [routerLink]="['/register']"
+        class="ml-3 p-button-outlined font-bold"
+      ></button>
+      }
+    </div>
+  </div>
+</div>
+
+<div class="relative p-6 overflow-hidden">
+  <img
+    src="assets/images/stock.jpg"
+    alt="Stock Market Background"
+    class="absolute top-0 left-0 w-auto h-full block md:w-full"
+    style="
+      opacity: 0.65;
+      z-index: -1;
+      object-fit: cover;
+      object-position: center;
+    "
+  />
+  <div class="text-center my-6 relative">
+    <div class="text-6xl text-white font-bold mb-1">Predict and Visualize</div>
+    <div class="text-6xl text-primary font-bold mb-4">Stock Market Trends</div>
+    <p
+      class="mt-0 mb-4 line-height-3 text-center mx-auto text-white"
+      style="max-width: 500px"
+    >
+      Leverage advanced algorithms to predict stock prices, visualize trends,
+      and gain insights through automated analysis.
+    </p>
+    @if (isUserLoggedIn()){
+    <a [routerLink]="['/prediction']">
+      <button pButton pRipple label="Get Started" type="button"></button>
+    </a>
+    } @else{
+    <a [routerLink]="['/login']">
+      <button
+        pButton
+        pRipple
+        label="Login/Register to Try"
+        type="button"
+      ></button>
+    </a>
+    }
+    <p class="text-sm mt-4 mb-4 line-height-3 text-white">Available for Web</p>
+  </div>
+</div>
+
+<div class="surface-section px-4 py-8 md:px-6 lg:px-8 text-center">
+  <div class="mb-3 font-bold text-3xl">
+    <span class="text-900">Empowering Investors with</span>
+    <span class="text-blue-600">AI-Driven Insights</span>
+  </div>
+  <div class="text-700 mb-6">
+    Harness the power of artificial intelligence to make informed investment
+    decisions.
+  </div>
+  <div class="grid">
+    <div class="col-12 md:col-4 mb-4 px-5">
+      <span
+        class="p-3 shadow-2 mb-3 inline-block surface-card"
+        style="border-radius: 10px"
+      >
+        <i class="pi pi-chart-line text-4xl text-blue-500"></i>
+      </span>
+      <div class="text-900 text-xl mb-3 font-medium">
+        Stock Price Prediction
+      </div>
+      <span class="text-700 line-height-3">
+        Utilize advanced machine learning models to predict future stock prices
+        and identify potential investment opportunities.
+      </span>
+    </div>
+    <div class="col-12 md:col-4 mb-4 px-5">
+      <span
+        class="p-3 shadow-2 mb-3 inline-block surface-card"
+        style="border-radius: 10px"
+      >
+        <i class="pi pi-chart-bar text-4xl text-blue-500"></i>
+      </span>
+      <div class="text-900 text-xl mb-3 font-medium">
+        Interactive Visualization
+      </div>
+      <span class="text-700 line-height-3">
+        Explore stock trends, patterns, and correlations through interactive
+        charts and graphs for enhanced analysis.
+      </span>
+    </div>
+    <div class="col-12 md:col-4 mb-4 px-5">
+      <span
+        class="p-3 shadow-2 mb-3 inline-block surface-card"
+        style="border-radius: 10px"
+      >
+        <i class="pi pi-file-edit text-4xl text-blue-500"></i>
+      </span>
+      <div class="text-900 text-xl mb-3 font-medium">Automated Insights</div>
+      <span class="text-700 line-height-3">
+        Generate automated text-based insights and summaries to quickly grasp
+        the key factors influencing stock prices.
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="surface-ground">
+  <div class="grid grid-nogutter">
+    <div
+      class="col-12 md:col-6 bg-no-repeat bg-cover p-8"
+      style="background-image: url('assets/images/contact-2.jpg')"
+    >
+      <div class="text-white text-2xl font-medium mb-6">Contact Us</div>
+      <div class="text-gray-300 line-height-3 mb-6">
+        Have questions or need assistance? Reach out to our dedicated support
+        team.
+      </div>
+      <ul class="list-none p-0 m-0 mt-6 text-white">
+        <li class="flex align-items-center mb-3">
+          <i class="pi pi-phone mr-2"></i>
+          <span>+30 210 12 34 567</span>
+        </li>
+        <li class="flex align-items-center mb-3">
+          <i class="pi pi-twitter mr-2"></i>
+          <span>&#64;stockprediction</span>
+        </li>
+        <li class="flex align-items-center">
+          <i class="pi pi-inbox mr-2"></i>
+          <span>support&#64;stockprediction.com</span>
+        </li>
+      </ul>
+    </div>
+    <div class="col-12 md:col-6">
+      <div
+        class="p-fluid formgrid grid px-4 py-8 md:px-6 lg:px-8"
+        [formGroup]="formGroup"
+      >
+        <div class="field col-12 lg:col-6 mb-4">
+          <input
+            id="firstname"
+            type="text"
+            formControlName="firstname"
+            class="py-3 px-2 text-lg"
+            pInputText
+            placeholder="First Name"
+          />
+        </div>
+        <div class="field col-12 lg:col-6 mb-4">
+          <input
+            id="lastname"
+            type="text"
+            formControlName="lastname"
+            class="py-3 px-2 text-lg"
+            pInputText
+            placeholder="Last Name"
+          />
+        </div>
+        <div class="field col-12 mb-4">
+          <input
+            id="email"
+            type="text"
+            formControlName="email"
+            pInputText
+            class="py-3 px-2 text-lg"
+            placeholder="Email"
+          />
+        </div>
+        <div class="field col-12 mb-4">
+          <textarea
+            id="message"
+            pInputTextarea
+            rows="3"
+            formControlName="message"
+            [autoResize]="true"
+            class="py-3 px-2 text-lg"
+            placeholder="Message"
+          ></textarea>
+        </div>
+        <div class="col-12 text-right">
+          <button
+            type="button"
+            pButton
+            pRipple
+            label="Submit"
+            icon="pi pi-envelope"
+            class="px-5 py-3 w-auto"
+            (click)="submitHelpdesk()"
+          ></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<p-toast />
+<div class="bg-gray-900 px-4 py-8 md:px-6 lg:px-8">
+  <div class="bg-gray-900">
+    <div class="grid">
+      <div
+        class="col-12 md:col-3 flex flex-wrap justify-content-start md:mb-0 mb-3"
+      >
+        <img
+          src="assets/images/logo.png"
+          alt="Logo"
+          width="100"
+          height="100"
+          class="mr-3"
+        />
+        <div class="text-gray-300 font-bold text-5xl">Stock Prediction</div>
+      </div>
+      <div class="col-12 md:col-3">
+        <div
+          class="text-white text-lg mb-4 flex flex-wrap"
+          style="max-width: 290px"
+        >
+          123 Stock Street, Investville, Finance Country
+        </div>
+        <div class="text-white mb-3">
+          <i class="pi pi-phone surface-800 border-round p-1 mr-2"></i>+30 210
+          12 34 567
+        </div>
+        <div class="text-white mb-3">
+          <i class="pi pi-inbox surface-800 border-round p-1 mr-2"></i
+          >support&#64;stockprediction.com
+        </div>
+      </div>
+      <div class="col-12 md:col-3 text-gray-200">
+        <div class="text-white font-bold line-height-3 mb-3">Company</div>
+        <a class="line-height-3 block cursor-pointer mb-2">About Us</a>
+        <a class="line-height-3 block cursor-pointer mb-2">Blog</a>
+        <a class="line-height-3 block cursor-pointer mb-2">Contact Us</a>
+        <a class="line-height-3 block cursor-pointer">Terms of Service</a>
+      </div>
+      <div class="col-12 md:col-3 text-gray-200">
+        <div class="text-white font-bold line-height-3 mb-3">Resources</div>
+        <a class="line-height-3 block cursor-pointer mb-2">Documentation</a>
+        <a class="line-height-3 block cursor-pointer mb-2">Tutorials</a>
+        <a class="line-height-3 block cursor-pointer">FAQ</a>
+      </div>
+    </div>
+  </div>
+</div>

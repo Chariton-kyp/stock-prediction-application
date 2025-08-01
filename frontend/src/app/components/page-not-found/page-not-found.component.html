@@ -1,0 +1,75 @@
+<div class="container">
+  <div class="surface-section px-4 py-8 md:px-6 lg:px-8">
+    <div
+      class="flex flex-column lg:flex-row justify-content-center align-items-center gap-7"
+    >
+      <div class="text-center lg:text-right">
+        <div class="mt-6 mb-3 font-bold text-6xl text-900">Are you lost?</div>
+        <p class="text-700 text-3xl mt-0 mb-6">
+          Sorry, we couldn't find the page.
+        </p>
+        <button
+          pButton
+          type="button"
+          label="Go back to home page"
+          [routerLink]="['/']"
+          class="p-button-outlined"
+        ></button>
+      </div>
+      <div>
+        <img
+          src="assets/images/404-rocket.png"
+          alt="Image"
+          class="w-full md:w-28rem"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+<div class="bg-gray-900 px-4 py-8 md:px-6 lg:px-8">
+  <div class="bg-gray-900">
+    <div class="grid">
+      <div
+        class="col-12 md:col-3 flex flex-wrap justify-content-start md:mb-0 mb-3"
+      >
+        <img
+          src="assets/images/logo.png"
+          alt="Logo"
+          width="100"
+          height="100"
+          class="mr-3"
+        />
+        <div class="text-gray-300 font-bold text-5xl">Stock Prediction</div>
+      </div>
+      <div class="col-12 md:col-3">
+        <div
+          class="text-white text-lg mb-4 flex flex-wrap"
+          style="max-width: 290px"
+        >
+          123 Stock Street, Investville, Finance Country
+        </div>
+        <div class="text-white mb-3">
+          <i class="pi pi-phone surface-800 border-round p-1 mr-2"></i>+30 210
+          12 34 567
+        </div>
+        <div class="text-white mb-3">
+          <i class="pi pi-inbox surface-800 border-round p-1 mr-2"></i
+          >support&#64;stockprediction.com
+        </div>
+      </div>
+      <div class="col-12 md:col-3 text-gray-200">
+        <div class="text-white font-bold line-height-3 mb-3">Company</div>
+        <a class="line-height-3 block cursor-pointer mb-2">About Us</a>
+        <a class="line-height-3 block cursor-pointer mb-2">Blog</a>
+        <a class="line-height-3 block cursor-pointer mb-2">Contact Us</a>
+        <a class="line-height-3 block cursor-pointer">Terms of Service</a>
+      </div>
+      <div class="col-12 md:col-3 text-gray-200">
+        <div class="text-white font-bold line-height-3 mb-3">Resources</div>
+        <a class="line-height-3 block cursor-pointer mb-2">Documentation</a>
+        <a class="line-height-3 block cursor-pointer mb-2">Tutorials</a>
+        <a class="line-height-3 block cursor-pointer">FAQ</a>
+      </div>
+    </div>
+  </div>
+</div>
